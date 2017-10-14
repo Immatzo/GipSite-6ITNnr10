@@ -3,6 +3,7 @@ url('https://fonts.googleapis.com/css?family=Raleway:300;400;700;900');
 
 * {
     box-sizing: border-box;
+    transition: all ease-in-out 250ms;
 }
 
 body {
@@ -22,6 +23,51 @@ img {
     margin: 0 auto;
 }
 
+.clearfix::after, section::after, footer::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* -----column-system----- */
+
+[class^=col-] {
+    width: 100%;
+    margin-top: 1em;
+}
+
+[class^=col-]:first-of-type {
+    margin-top: 0;
+}
+
+.col-1 {
+    width: 33.3333334%;
+    float: left;
+}
+
+@media (min-width: 40rem) {
+    [class^=col-] {
+    float: left;
+    padding: 0 .5em;
+        margin-top: 0;
+}
+    
+    [class^=col-]:first-of-type {
+        padding-left: 0;
+    }
+
+    [class^=col-]:last-of-type {
+        padding-right: 0;
+    }
+
+    .col-3 {
+        width: 50%;
+    }
+
+    .col-1 {
+        width: 16.6666%;
+    }
+}
 /* -----typography----- */
 
 h1 {
@@ -52,6 +98,16 @@ p:last-of-type {
     font-size: .9em;
 }
 
+.title-cta {
+    margin: 0 0 .5em;
+}
+
+.unstyled-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
 @media (min-width: 60rem) {
     p {
         font-size: 1.2rem;
@@ -76,23 +132,45 @@ p:last-of-type {
     padding: .5em 1.75em;
 }
 
-.button-accent {
-    color: rgb(0,191,255);
-    border-color: rgb(0,191,255);
-}
-
-vutton-accent:hover, 
-button-accent:focus {
-    background: rgb(0,191,255);
-    color: #232323;
-}
-
 @media (min-width: 60rem) {
     .button {
         font-size: 1.5rem;
     }
 }
 
+.button-small {
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.button-accent {
+    color: rgb(0,191,255);
+    border-color: rgb(0,191,255);
+}
+
+.button-accent:hover, 
+.button-accent:focus {
+    background-color: rgb(0,191,255);
+    color: #232323;
+}
+
+.button-dark {
+    color: #232323;
+    border-color: #232323;
+}
+
+.button-dark:hover, 
+.button-dark:focus {
+    background-color:  #232323;
+    color: rgb(0,191,255);
+}
+
+
+/* -----parallax----- */
+
+.parallax--bg, .parallax--box {
+    transition: initial;
+}
 
 /* -----header----- */
 
@@ -141,8 +219,7 @@ nav a:focus {
 /* -----hero----- */
 
 .home-hero {
-    background-image: url(img/wallpaper.jpg);
-    
+    background-image: url(../img/wallpaper.jpg);
     padding: 10em 0;
     color: #FFF;
 }
@@ -194,9 +271,9 @@ nav a:focus {
         font-size: 2.5rem;
     }
     .home-about {
-        background-image: url(img/ikkeenliesje.jpg);
+        background-image: url(../img/ikkeenliesje.jpg);
         background-repeat: no-repeat;
-        padding-bottom: 15em;
+        padding-bottom: 5em;
         padding-left: 5em;
     }
     .home-about-textbox {
@@ -215,5 +292,83 @@ nav a:focus {
         transform: translateX(0);
     }
 }
+
+/* -----portfolio----- */
+
+.portfolio {
+    margin: 3em 0 0;
+}
+
+.port-item {
+    margin: 0;
+    position: relative;
+}
+
+.port-item img {
+    display: block;
+}
+
+.port-desc {
+    position: absolute;
+    z-index: 100;
+    bottom: 0em;
+    left: 0em;
+    right: 0em;
+    color: white;
+    background: rgba(0,0,0,.6);
+    padding-bottom: 2em;
+}
+
+.port-desc p {
+    margin: 1em;
+}
+
+@media (min-width: 37rem) {
+    .port-item {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 60rem) {
+    .port-item {
+        width: 33.3333334%;
+        overflow: hidden;
+    }
+    
+    .port-desc {
+        transform: translateY(150%);
+    }
+    
+    .port-item:hover .port-desc {
+        transform: translateY(0%);
+    }
+}
+
+/* -----cta----- */
+
+.cta {
+    background-color: rgb(0,191,255);
+    padding: 6em 0;
+}
+
+/* -----footer----- */
+
+footer {
+    background: #232323;
+    color: #fff;
+    text-align: left;
+    padding: 5em 0;
+}
+
+
+
+
+
+
+
+
+
+
 
 
