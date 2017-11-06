@@ -13,12 +13,12 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="left hide-on-med-and-down">
 		<li><a href="index.html"><i class="material-icons">home</i></a></li>
-		<li><a style="background-color: #212121" href="#">Overzicht</a></li>
-        <li><a href="#">Maandag</a></li>
-		<li><a href="#">Dinsdag</a></li>
-        <li><a href="#">Woensdag</a></li>
-        <li><a href="#">Donderdag</a></li>
-		<li><a href="#">Vrijdag</a></li>
+		<li><a onclick="openOv()" style="background-color: #212121">Overzicht</a></li>
+        <li><a onclick="openMa()">Maandag</a></li>
+		<li><a onclick="openDi()">Dinsdag</a></li>
+        <li><a onclick="openWoe()">Woensdag</a></li>
+        <li><a onclick="openDo()">Donderdag</a></li>
+		<li><a onclick="openVrij()">Vrijdag</a></li>
         </ul>
       <ul class="side-nav" id="mobile-demo">
 		<li><a><h4 style="color: black" href="#"><span style="text-decoration: underline">Overzicht Sta</span>g<span style="text-decoration: underline">e</span></h4></a></li>
@@ -37,23 +37,65 @@
         hey
         
       </div>
-      <div class="col s5 m5 l5 xl5">
-        hoi
+	  
+      <div class="col s10 m10 l10 xl10">
+        <ul class="collapsible popout" data-collapsible="accordion">
+			<li>
+			    <div id="ov" class="collapsible-header active"><i class="material-icons">filter_drama</i>Overzicht</div>
+			    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+			<li>
+			    <div id="ma" class="collapsible-header"><i class="material-icons">filter_drama</i>Maandag</div>
+			    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+			<li>
+			    <div id="di" class="collapsible-header"><i class="material-icons">filter_drama</i>Dinsdag</div>
+			    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+			<li>
+			    <div id="woe" class="collapsible-header"><i class="material-icons">filter_drama</i>Woensdag</div>
+			    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+			<li>
+			    <div id="do" class="collapsible-header"><i class="material-icons">place</i>Donderdag</div>
+			    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+			<li>
+			    <div id="vrij" class="collapsible-header"><i class="material-icons">whatshot</i>Vrijdag</div>
+			    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+			</li>
+	  </ul>
         
       </div>
-      <div class="col s5 m5 l5 xl5">
-        hallo
-     
-      </div>
-
     </div>
   
    
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
-        $( document ).ready(function(){})
+        $(document).ready(function(){
+			$('.collapsible').collapsible();
+		});
         $(".button-collapse").sideNav();
+				
+		function openOv(){
+			$('.collapsible').collapsible('open', 0);
+		}
+		function openMa(){
+			$('.collapsible').collapsible('open', 1);
+		}
+		function openDi(){
+			$('.collapsible').collapsible('open', 2);
+		}
+		function openWoe(){
+			$('.collapsible').collapsible('open', 3);
+		}
+		function openDo(){
+			$('.collapsible').collapsible('open', 4);
+		}
+		function openVrij(){
+			$('.collapsible').collapsible('open', 5);
+		}
     </script>
 </body>
 <footer>
