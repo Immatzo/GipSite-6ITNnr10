@@ -16,6 +16,9 @@
         .actief {
             background-color: dimgray;
         }
+		.actief:hover {
+            background-color: dimgray;
+        }
         p {color: white;}
     </style>
   <nav class="transparent">
@@ -41,13 +44,13 @@
       </ul>
     </div>
   </nav>
-    <div class="row">
+    <div id="kolom" class="row">
 
-      <div class="col s2 m2 l2 xl2">
+      <div id="links" class="col s0 m0 l2 xl2">
         
       </div>
 	  
-      <div class="col s8 m8 l8 xl8">
+      <div id="midden" class="col s12 m12 l8 xl8">
         <ul class="collapsible popout" data-collapsible="accordion">
 			<li>
 			    <div id="ov" class="collapsible-header transparent active"><i class="material-icons">label</i>Overzicht</div>
@@ -56,8 +59,7 @@
 			</li>
 			<li>
 			    <div id="ma" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Maandag</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p>
-                </div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
 			</li>
 			<li>
 			    <div id="di" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Dinsdag</div>
@@ -78,18 +80,30 @@
 	  </ul>
         
       </div>
-         <div class="col s2 m2 l2 xl2">
+        <div id="rechts" class="col s0 m0 l2 xl2">
         
-      </div>
+		</div>
     </div>
   
    
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
-        $(document).ready(function(){
-			$('.collapsible').collapsible();
-            $(".button-collapse").sideNav();
+      
+		 <!-- $('.collapsible').collapsible({ -->
+			<!-- accordion: false, -->
+			<!-- /* -->
+			<!-- onOpen: function(el) { el.find('i').html('label'); },  -->
+			<!-- onClose: function(el) { el.find('i').html('label_outline'); }  -->
+			<!-- */ -->
+			<!-- onOpen: function(el) { console.log(el.find('i').html()); } -->
+		  <!-- }); -->
+		$(".button-collapse").sideNav();
+		$('.collapsible').click(function() {
+			$(this).collapsible({
+				onOpen: function(el) { el.find('i').html('label'); },
+				onClose: function(el) { el.find('i').html('label_outline'); }
+			});
 		});
         
         function activeer(dag){
@@ -104,48 +118,107 @@
             $(dag).addClass("actief");
         }
         
-        function changeIcon(dag, naam){
+        function changeIcon(dag, icon1, icon2){
             //label outline
-            $("#ov").html('<i class="material-icons">label_outline</i>Overzicht');
-            $("#ma").html('<i class="material-icons">label_outline</i>Maandag');
-            $("#di").html('<i class="material-icons">label_outline</i>Dinsdag');
-            $("#woe").html('<i class="material-icons">label_outline</i>Woensdag');
-            $("#do").html('<i class="material-icons">label_outline</i>Donderdag');
-            $("#vrij").html('<i class="material-icons">label_outline</i>Vrijdag');
+            $("#ov").find('i').html(icon2);
+            $("#ma").find('i').html(icon2);
+            $("#di").find('i').html(icon2);
+            $("#woe").find('i').html(icon2);
+            $("#do").find('i').html(icon2);
+            $("#vrij").find('i').html(icon2);
             //label
-            $(dag).html('<i class="material-icons">label</i>' + naam); 
+            $(dag).find('i').html(icon1); 
         }
+		
+		function changeIcon2(dag, icon1){
+            //label outline
+            $(dag).find('i').html(icon1); 
+        }
+		
+		var teller = 0;
 		
         function openOv(){
 			$('.collapsible').collapsible('open', 0);
             activeer("#overzicht");
-            changeIcon("#ov", "overzicht");
+			if(teller == 0){
+			changeIcon("#ov", "label", "label_outline");
+			teller++;
+			}else{
+			changeIcon2("#ov", "label_outline");
+			teller--;
+			}
+            
 		}
 		function openMa(){
 			$('.collapsible').collapsible('open', 1);
             activeer("#maandag");
-            changeIcon("#ma", "maandag");
+            if(teller == 0){
+			changeIcon("#ma", "label", "label_outline");
+			teller++;
+			}else{
+			changeIcon2("#ma", "label_outline");
+			teller--;
+			}
 		}
 		function openDi(){
 			$('.collapsible').collapsible('open', 2);
             activeer("#dinsdag");
-            changeIcon("#di", "dinsdag");
+            if(teller == 0){
+			changeIcon("#di", "label", "label_outline");
+			teller++;
+			}else{
+			changeIcon2("#di", "label_outline");
+			teller--;
+			}
 		}
 		function openWoe(){
 			$('.collapsible').collapsible('open', 3);
             activeer("#woensdag");
-            changeIcon("#woe", "woensdag");
+            if(teller == 0){
+			changeIcon("#woe", "label", "label_outline");
+			teller++;
+			}else{
+			changeIcon2("#woe", "label_outline");
+			teller--;
+			}
 		}
 		function openDo(){
 			$('.collapsible').collapsible('open', 4);
             activeer("#donderdag");
-            changeIcon("#do", "donderdag");
+            if(teller == 0){
+			changeIcon("#do", "label", "label_outline");
+			teller++;
+			}else{
+			changeIcon2("#do", "label_outline");
+			teller--;
+			}
 		}
 		function openVrij(){
 			$('.collapsible').collapsible('open', 5);
             activeer("#vrijdag");
-            changeIcon("#vrij", "vrijdag");
+            if(teller == 0){
+			changeIcon("#vrij", "label", "label_outline");
+			teller++;
+			}else{
+			changeIcon2("#vrij", "label_outline");
+			teller--;
+			}
         }
+		
+		/*
+		const mq = window.matchMedia( "(min-width: 500px)" );
+		if(mq.matches){}else
+		{
+			var a = document.getElementById("links");
+			var b = document.getElementById("midden");
+			var c = document.getElementById("rechts");
+			var d = document.getElementById("kolom");
+			a.removeClass("col s2 m2 l2 xl2");
+			b.removeClass("col s8 m8 l8 xl8");
+			c.removeClass("col s2 m2 l2 xl2");
+			d.removeClass("row");
+		}
+		*/
     </script>
 </body>
 <footer>
