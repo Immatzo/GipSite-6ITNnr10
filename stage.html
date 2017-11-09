@@ -1,227 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IKKE</title>
+  <title>Stage</title>
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
 </head>
-<body>
-    <style>
+<style>
         body{
             background-image: url(img/wallhaven-395582.jpg);
             color: white;
         }
-        .actief {
-            background-color: dimgray;
-        }
-		.actief:hover {
-            background-color: dimgray;
-        }
-        p {color: white;}
-    </style>
-  <nav class="transparent">
-    <div class="nav-wrapper transparent">
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="left hide-on-med-and-down" style="border-left: 1px; border-color: aqua;">
-		<li><a href="index.html"><i class="material-icons">home</i></a></li>
-		<li><a id="overzicht" onclick="openOv()" class="actief">Overzicht</a></li>
-        <li><a id="maandag" onclick="openMa()">Maandag</a></li>
-		<li><a id="dinsdag" onclick="openDi()">Dinsdag</a></li>
-        <li><a id="woensdag" onclick="openWoe()">Woensdag</a></li>
-        <li><a id="donderdag" onclick="openDo()">Donderdag</a></li>
-		<li><a id="vrijdag" onclick="openVrij()">Vrijdag</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-		<li><a onclick="openOv()"><h4 style="color: black" href="#"><span style="text-decoration: underline">Overzicht Sta</span>g<span style="text-decoration: underline">e</span></h4></a></li>
-        <li><a onclick="openMa()">&nbsp;&nbsp;&nbsp;Maandag</a></li>
-        <li><a onclick="openDi()">&nbsp;&nbsp;&nbsp;Dinsdag</a></li>
-        <li><a onclick="openWoe()">&nbsp;&nbsp;&nbsp;Woensdag</a></li>
-        <li><a onclick="openDo()">&nbsp;&nbsp;&nbsp;Donderdag</a></li>
-		<li><a onclick="openVrij()">&nbsp;&nbsp;&nbsp;Vrijdag</a></li>
-		<li><a href="index.html"><h5 style="color: black">Home</h5></a></li>
-      </ul>
-    </div>
-  </nav>
-    <div id="kolom" class="row">
+		header {
+			position: relative;
+			left: 0;
+			right: 0;
+			margin: 1em;
+		}
 
-      <div id="links" class="col s0 m0 l2 xl2">
-        
-      </div>
-	  
-      <div id="midden" class="col s12 m12 l8 xl8">
-        <ul class="collapsible popout" data-collapsible="accordion">
-			<li>
-			    <div id="ov" class="collapsible-header transparent active"><i class="material-icons">label</i>Overzicht</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p>
-                </div>
-			</li>
-			<li>
-			    <div id="ma" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Maandag</div>
-                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-			<li>
-			    <div id="di" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Dinsdag</div>
-			    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-			<li>
-			    <div id="woe" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Woensdag</div>
-			    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-			<li>
-			    <div id="do" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Donderdag</div>
-			    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-			<li>
-			    <div id="vrij" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Vrijdag</div>
-			    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-			</li>
-	  </ul>
-        
-      </div>
-        <div id="rechts" class="col s0 m0 l2 xl2">
-        
+		nav ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		nav li {
+			display: inline-block;
+			margin: 1em;
+		}
+
+		nav a {
+			font-weight: 900;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: .8rem;
+			padding: .5em;
+			color: #FFF;
+		}
+
+		nav a:hover, 
+		nav a:focus {
+			color: #DDD;
+		}
+
+		@media (min-width: 60rem) {
+			.logo {
+				float: left;
+			}
+			nav {
+				float: right;
+			}
+		}
+    </style>
+<body>
+	<header>
+        <img src="img/logo2.png" alt="logo" class="logo">
+        <nav class="transparent">
+            <ul>
+                <li><a href="">School</a></li>
+                <li><a href="gip.html">GIP</a></li>
+                <li><a href="stage.html">Stage</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="kolom" class="row">
+		<div class="col s0 m0 l2 xl2"></div>
+		<div class="col s12 m12 l8 xl8">
+			<ul class="collapsible popout" data-collapsible="accordion">
+				<li>
+					<div id="ov" class="collapsible-header transparent active"><i class="material-icons">label</i>Overzicht</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p>
+					</div>
+				</li>
+				<li>
+					<div id="ma" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Maandag</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div id="di" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Dinsdag</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div id="woe" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Woensdag</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div id="do" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Donderdag</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+				<li>
+					<div id="vrij" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Vrijdag</div>
+					<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+				</li>
+			</ul>
 		</div>
+        <div class="col s0 m0 l2 xl2"></div>
     </div>
   
-   
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
-      
-		 <!-- $('.collapsible').collapsible({ -->
-			<!-- accordion: false, -->
-			<!-- /* -->
-			<!-- onOpen: function(el) { el.find('i').html('label'); },  -->
-			<!-- onClose: function(el) { el.find('i').html('label_outline'); }  -->
-			<!-- */ -->
-			<!-- onOpen: function(el) { console.log(el.find('i').html()); } -->
-		  <!-- }); -->
-		$(".button-collapse").sideNav();
+      $(".button-collapse").sideNav();
 		$('.collapsible').click(function() {
 			$(this).collapsible({
 				onOpen: function(el) { el.find('i').html('label'); },
 				onClose: function(el) { el.find('i').html('label_outline'); }
 			});
 		});
-        
-        function activeer(dag){
-            //inactief
-            $("#overzicht").removeClass("actief");
-            $("#maandag").removeClass("actief");
-            $("#dinsdag").removeClass("actief");
-            $("#woensdag").removeClass("actief");
-            $("#donderdag").removeClass("actief");
-            $("#vrijdag").removeClass("actief");
-            //actief
-            $(dag).addClass("actief");
-        }
-        
-        function changeIcon(dag, icon1, icon2){
-            //label outline
-            $("#ov").find('i').html(icon2);
-            $("#ma").find('i').html(icon2);
-            $("#di").find('i').html(icon2);
-            $("#woe").find('i').html(icon2);
-            $("#do").find('i').html(icon2);
-            $("#vrij").find('i').html(icon2);
-            //label
-            $(dag).find('i').html(icon1); 
-        }
-		
-		function changeIcon2(dag, icon1){
-            //label outline
-            $(dag).find('i').html(icon1); 
-        }
-		
-		var teller = 0;
-		
-        function openOv(){
-			$('.collapsible').collapsible('open', 0);
-            activeer("#overzicht");
-			if(teller == 0){
-			changeIcon("#ov", "label", "label_outline");
-			teller++;
-			}else{
-			changeIcon2("#ov", "label_outline");
-			teller--;
-			}
-            
-		}
-		function openMa(){
-			$('.collapsible').collapsible('open', 1);
-            activeer("#maandag");
-            if(teller == 0){
-			changeIcon("#ma", "label", "label_outline");
-			teller++;
-			}else{
-			changeIcon2("#ma", "label_outline");
-			teller--;
-			}
-		}
-		function openDi(){
-			$('.collapsible').collapsible('open', 2);
-            activeer("#dinsdag");
-            if(teller == 0){
-			changeIcon("#di", "label", "label_outline");
-			teller++;
-			}else{
-			changeIcon2("#di", "label_outline");
-			teller--;
-			}
-		}
-		function openWoe(){
-			$('.collapsible').collapsible('open', 3);
-            activeer("#woensdag");
-            if(teller == 0){
-			changeIcon("#woe", "label", "label_outline");
-			teller++;
-			}else{
-			changeIcon2("#woe", "label_outline");
-			teller--;
-			}
-		}
-		function openDo(){
-			$('.collapsible').collapsible('open', 4);
-            activeer("#donderdag");
-            if(teller == 0){
-			changeIcon("#do", "label", "label_outline");
-			teller++;
-			}else{
-			changeIcon2("#do", "label_outline");
-			teller--;
-			}
-		}
-		function openVrij(){
-			$('.collapsible').collapsible('open', 5);
-            activeer("#vrijdag");
-            if(teller == 0){
-			changeIcon("#vrij", "label", "label_outline");
-			teller++;
-			}else{
-			changeIcon2("#vrij", "label_outline");
-			teller--;
-			}
-        }
-		
-		/*
-		const mq = window.matchMedia( "(min-width: 500px)" );
-		if(mq.matches){}else
-		{
-			var a = document.getElementById("links");
-			var b = document.getElementById("midden");
-			var c = document.getElementById("rechts");
-			var d = document.getElementById("kolom");
-			a.removeClass("col s2 m2 l2 xl2");
-			b.removeClass("col s8 m8 l8 xl8");
-			c.removeClass("col s2 m2 l2 xl2");
-			d.removeClass("row");
-		}
-		*/
-    </script>
+	</script>
 </body>
-<footer>
-  
-</footer>
 </html>
