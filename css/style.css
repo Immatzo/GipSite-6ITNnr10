@@ -63,6 +63,10 @@ img {
     .col-3 {
         width: 50%;
     }
+    
+    .col-2 {
+        width: 32%;
+    }
 
     .col-1 {
         width: 16.6666%;
@@ -87,9 +91,8 @@ p:last-of-type {
 
 .title {
     font-size: 2.5rem;
-    margin-bottom: 1.5em;
     font-weight: 900;
-    margin-top: .5em;
+    margin-top: -3em;
 }
 
 .title span:first-of-type {
@@ -202,7 +205,7 @@ nav a {
     font-weight: 900;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: .8rem;
+    font-size: .95rem;
     padding: .5em;
     color: #FFF;
 }
@@ -276,8 +279,20 @@ nav a:focus {
     h1 {
         font-size: 2.5rem;
     }
-    .home-about {
+    .home-about1 {
+        background-image: url(../img/ikke.jpg);
+        background-repeat: no-repeat;
+        padding-bottom: 5em;
+        padding-left: 5em;
+    }
+    .home-about2 {
         background-image: url(../img/ikkeenliesje.jpg);
+        background-repeat: no-repeat;
+        padding-bottom: 5em;
+        padding-left: 5em;
+    }
+    .home-about3 {
+        background-image: url(../img/GoldenRetriever.jpg);
         background-repeat: no-repeat;
         padding-bottom: 5em;
         padding-left: 5em;

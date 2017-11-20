@@ -8,62 +8,30 @@
 
 </head>
 <style>
-        body{
-            background-image: url(img/wallhaven-395582.jpg);
-            color: white;
-        }
-		header {
-			position: relative;
-			left: 0;
-			right: 0;
-			margin: 1em;
-		}
-
-		nav ul {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-		}
-
-		nav li {
-			display: inline-block;
-			margin: 1em;
-		}
-
-		nav a {
-			font-weight: 900;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-size: .8rem;
-			padding: .5em;
-			color: #FFF;
-		}
-
-		nav a:hover, 
-		nav a:focus {
-			color: #DDD;
-		}
-
-		@media (min-width: 60rem) {
-			.logo {
-				float: left;
-			}
-			nav {
-				float: right;
-			}
-		}
+     @import
+     url('https://fonts.googleapis.com/css?family=Raleway:300;400;700;900');
+    
+     body{
+         background-image: url(img/wallhaven-395582.jpg);
+         color: white;
+         font-family: 'Raleway', sans-serif;
+         font-weight: 900;
+     }
     </style>
 <body>
 	<header>
-        <img src="img/logo2.png" alt="logo" class="logo">
         <nav class="transparent">
-            <ul>
-                <li><a href="">School</a></li>
+            <div class="nav-wrapper">
+              <img src="img/logo2.png" class="brand-logo">
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">SCHOOL</a></li>
                 <li><a href="gip.html">GIP</a></li>
-                <li><a href="stage.html">Stage</a></li>
-            </ul>
+                <li><a href="index.html"><i class="material-icons">home</i></a></li>
+              </ul>
+            </div>
         </nav>
     </header>
+    
     <div id="kolom" class="row">
 		<div class="col s0 m0 l2 xl2"></div>
 		<div class="col s12 m12 l8 xl8">
@@ -101,13 +69,13 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
-      $(".button-collapse").sideNav();
-		$('.collapsible').click(function() {
-			$(this).collapsible({
-				onOpen: function(el) { el.find('i').html('label'); },
-				onClose: function(el) { el.find('i').html('label_outline'); }
-			});
-		});
+        $(".button-collapse").sideNav();
+        $('.collapsible').click(function() {
+            $(this).collapsible({
+                onOpen: function(el) { el.find('i').html('label'); },
+                onClose: function(el) { el.find('i').html('label_outline'); }
+            });
+        });
 	</script>
 </body>
 </html>
