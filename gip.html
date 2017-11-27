@@ -234,6 +234,10 @@
         $('.collapsible').click(function() {
             $(this).collapsible({
                 onOpen: function(el) { el.find('i').html('label'); },
+				onOpen: function(){
+							document.body.scrollTop = 0;
+							document.documentElement.scrollTop = 0;
+						},
                 onClose: function(el) { el.find('i').html('label_outline'); }
             });
         });
