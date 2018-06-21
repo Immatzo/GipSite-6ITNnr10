@@ -44,7 +44,6 @@
 				<div class="nav-wrapper">
 				  <img src="img/logo2.png" class="brand-logo">
 				  <ul id="nav-mobile" class="right">
-					<!--<li><a href="it-tapa.html">IT-TAPA</a></li>-->
 					<li><a href="stage.html">STAGE</a></li>
                     <li><a href="faq.html">FAQ</a></li>
 					<li><a class="light-blue lighten-3 btn-floating pulse" href="index.html"><i class="material-icons">home</i></a></li>
@@ -219,10 +218,7 @@
 					<div id="vam" class="collapsible-header transparent"><i class="material-icons">label_outline</i>Video about me</div>
 					<div class="collapsible-body"><p>
                         <span>This is a short video about me. I created it myself using Adobe Spark.</span><br><br>
-                        <video width="50%" controls>
-                          <source src="video/VideoEnglish.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                        </video></p>
+                        <iframe style="margin-left: 20%; width: 60%; height: 30em;" src="https://www.youtube.com/embed/R0huz_LtRx0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
 				</li>
                 <li>
@@ -293,12 +289,12 @@
 			$(".button-collapse").sideNav();
 			$('.collapsible').click(function() {
 				$(this).collapsible({
-					onOpen: function(el) { el.find('i').html('label'); },
+					onOpen: function(el) { el.find('i').html('label'); document.body.scrollTop = 0;	document.documentElement.scrollTop = 0; },
+					onClose: function(el) { el.find('i').html('label_outline'); },
 					onOpen: function(){
-								document.body.scrollTop = 0;
-								document.documentElement.scrollTop = 0;
-							},
-					onClose: function(el) { el.find('i').html('label_outline'); }
+						document.body.scrollTop = 0;
+						document.documentElement.scrollTop = 0;
+					}
 				});
 			});
 		</script>
